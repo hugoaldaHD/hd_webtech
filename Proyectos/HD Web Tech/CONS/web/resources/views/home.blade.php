@@ -20,13 +20,13 @@
     </div>
 
     {{-- Lista de paquetes --}}
-    <h2 class="mb-4">Nuestros Paquetes</h2>
+    <h2 class="mb-4 fade-up">Nuestros Paquetes</h2>
     <div class="row">
         @foreach($paquetes as $paquete)
-            <div class="col-md-4 mb-4">
+            <div class="col-md-4 mb-4 fade-up">
                 <div class="card h-100">
                     <div class="card-body">
-                        <h5 class="card-title">{{ $paquete->titulo }}</h5>
+                        <h5 class="card-title"><i class="bi bi-box-seam"></i> {{ $paquete->titulo }}</h5>
                         <p class="card-text">{{ $paquete->descripcion }}</p>
                         <ul>
                             @foreach($paquete->detalles as $detalle)
@@ -34,11 +34,28 @@
                             @endforeach
                         </ul>
                         <p><strong>Precio:</strong> {{ number_format($paquete->precio, 2) }} €</p>
-                        <a href="{{ route('pedidos.create') }}" class="btn btn-primary">Solicitar</a>
+                        <a href="{{ route('pedidos.create') }}" class="btn btn-primary btn-icon">
+                            <i class="bi bi-cart-plus"></i> Solicitar
+                        </a>
                     </div>
                 </div>
             </div>
         @endforeach
     </div>
+
+    <script>
+        // animar elementos al hacer scroll
+        const fadeElements = document.querySelectorAll('.fade-up');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+
+        fadeElements.forEach(el => observer.observe(el));
+    </script>
 
 @endsection
