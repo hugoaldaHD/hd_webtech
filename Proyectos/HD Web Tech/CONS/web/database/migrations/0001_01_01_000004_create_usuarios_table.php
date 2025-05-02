@@ -8,16 +8,18 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('usuarios', function (Blueprint $table) {
-            $table->id_usuario(BIGINCREMENT);
-            $table->nombre(STRING(20));
-            $table->correo(STRING UNIQUE);
-            $table->password(STRING);
-            $table->telefono(STRING(20).nullable());
-            $table->id_rol(UNSIGNEDBIGINTEGER);
+            $table->id('id_usuario');
+            $table->string('nombre');
+            $table->string('correo')->unique();
+            $table->string('password');
+            $table->string('telefono', 20)->nullable();
+            $table->unsignedBigInteger('id_rol');
             $table->timestamps();
-            $table->foreign id_rol references id_rol on roles;
+
+            $table->foreign('id_rol')->references('id_rol')->on('roles');
         });
     }
+
     public function down(): void
     {
         Schema::dropIfExists('usuarios');
