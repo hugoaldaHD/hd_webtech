@@ -109,3 +109,46 @@ footer a:hover {
     align-items: center;
     gap: 0.5rem;
 }
+
+/* Carrusel de anuncios uniforme */
+.carousel-item {
+    min-height: 350px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: #1a1f2c;
+}
+
+.carousel-content {
+    max-width: 700px;
+    width: 100%;
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #1a1f2c;
+    border: 1px solid #2c3e50;
+    border-radius: 10px;
+}
+
+.carousel-content h3 {
+    color: #00bfff;
+    margin-bottom: 0.5rem;
+}
+
+.carousel-content p,
+.carousel-content ul li {
+    color: #d0d0d0;
+}
+
+.carousel-content ul {
+    margin: 1rem 0;
+    padding-left: 1.2rem;
+    text-align: left;
+}
+
+.carousel-content .precio {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #f0f0f0;
+    margin-top: 1rem;
+}
