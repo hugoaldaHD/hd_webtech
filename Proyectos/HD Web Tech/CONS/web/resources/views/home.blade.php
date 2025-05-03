@@ -19,7 +19,7 @@
         </button>
     </div>
 
-    {{-- Lista de paquetes --}}
+    {{-- Lista de paquetes
     <h2 class="mb-4 fade-up">Nuestros Paquetes</h2>
     <div class="row">
         @foreach($paquetes as $paquete)
@@ -34,15 +34,20 @@
                             @endforeach
                         </ul>
                         <p><strong>Precio:</strong> {{ number_format($paquete->precio, 2) }} €</p>
-                        <a href="{{ route('pedidos.create') }}" class="btn btn-primary btn-icon">
+                        <a href="" class="btn btn-primary btn-icon">
                             <i class="bi bi-cart-plus"></i> Solicitar
                         </a>
                     </div>
                 </div>
             </div>
         @endforeach
-    </div>
+    </div> --}}
 
+    <div class="container my-5">
+        <h2>Nuestros Paquetes</h2>
+        <div class="row" id="paquetes-container"></div>
+    </div>     
+    
     <script>
         // animar elementos al hacer scroll
         const fadeElements = document.querySelectorAll('.fade-up');
