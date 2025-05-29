@@ -9,13 +9,15 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // Llamada para mostrar los paquetes via fetch
 Route::get('/paquetes', function () {
-    return Paquete::with('detalles')->get();
+    $paquetes = Paquete::with('detalles')->get();
+    return response()->json($paquetes);
 });
 
 // Llamada para mostrar los anuncios via fetch
 Route::get('/anuncios', function () {
-    return Anuncio::with('paquete.detalles')
+    $anuncios = Anuncio::with('paquete.detalles')
         ->where('visible', true)
         ->orderBy('orden')
         ->get();
+    return response()->json($anuncios);
 });

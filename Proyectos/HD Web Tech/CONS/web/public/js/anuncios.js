@@ -1,56 +1,46 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const inner = document.getElementById('carousel-inner');
-    const indicators = document.getElementById('carousel-indicators');
-    const carousel = document.getElementById('carouselAnunciosContainer');
-
-    if (!inner || !indicators || !carousel) return;
-
+document.addEventListener('DOMContentLoaded', () => {
     fetch('/anuncios')
-        .then(res => res.json())
+        .then(response => response.json())
         .then(anuncios => {
-            inner.innerHTML = '';
-            indicators.innerHTML = '';
+            const indicators = document.getElementById('carousel-indicators');
+            const inner = document.getElementById('carousel-inner');
 
             anuncios.forEach((anuncio, index) => {
-                const paquete = anuncio.paquete;
-                if (!paquete) return;
+                if (!anuncio.paquete) return;
 
-                // Slide
+                // Indicador
+                const indicator = document.createElement('button');
+                indicator.type = 'button';
+                indicator.setAttribute('data-bs-target', '#carouselAnuncios');
+                indicator.setAttribute('data-bs-slide-to', index);
+                indicator.setAttribute('aria-label', `Slide ${index + 1}`);
+                if (index === 0) {
+                    indicator.classList.add('active');
+                    indicator.setAttribute('aria-current', 'true');
+                }
+                indicators.appendChild(indicator);
+
+                // Item del carrusel
                 const item = document.createElement('div');
                 item.className = 'carousel-item' + (index === 0 ? ' active' : '');
 
-                const content = document.createElement('div');
-                content.className = 'carousel-content text-center p-4';
-                content.innerHTML = `
-                    <h3>${paquete.titulo}</h3>
-                    <p>${paquete.descripcion}</p>
-                    <ul style="text-align: left; max-width: 600px; margin: 0 auto;">
-                        ${(paquete.detalles || []).map(d => `<li>${d.texto}</li>`).join('')}
-                    </ul>
-                    <p class="precio mt-3"><strong>Precio:</strong> ${parseFloat(paquete.precio).toFixed(2)} €</p>
+                const detalles = anuncio.paquete.detalles.map(detalle => `<li>${detalle.texto}</li>`).join('');
+                item.innerHTML = `
+                    <div class="d-flex justify-content-center">
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title"><i class="bi bi-box-seam"></i> ${anuncio.paquete.titulo}</h5>
+                                    <p class="card-text">${anuncio.paquete.descripcion}</p>
+                                    <ul>${detalles}</ul>
+                                    <p><strong>Precio:</strong> ${parseFloat(anuncio.paquete.precio).toFixed(2)} €</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 `;
-
-                item.appendChild(content);
                 inner.appendChild(item);
-
-                // Indicador
-                const dot = document.createElement('button');
-                dot.type = 'button';
-                dot.setAttribute('data-bs-target', '#carouselAnunciosContainer');
-                dot.setAttribute('data-bs-slide-to', index);
-                if (index === 0) dot.classList.add('active');
-                indicators.appendChild(dot);
-            });
-
-            // Inicializar carrusel (por si no se activa solo)
-            new bootstrap.Carousel(carousel, {
-                interval: 5000,
-                wrap: true,
-                pause: 'hover'
             });
         })
-        .catch(err => {
-            console.error("Error cargando anuncios:", err);
-            inner.innerHTML = '<div class="text-danger p-5 text-center">Error al cargar los anuncios.</div>';
-        });
+        .catch(error => console.error('Error cargando anuncios:', error));
 });
