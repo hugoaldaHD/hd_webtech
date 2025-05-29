@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             PaquetesSeeder::class,
-            DetallesPaqueteSeeder::class,
+            DetallesPaquetesSeeder::class,
             AnunciosSeeder::class,
         ]);
     }
