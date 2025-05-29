@@ -4,7 +4,7 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', sans-serif;
-    background-color: #0d1117; /* fondo oscuro */
+    background-color: #0d1117;
     color: #f0f0f0;
 }
 
@@ -51,6 +51,28 @@ html, body {
 
 .card-title {
     color: #007bff;
+}
+
+.card ul {
+    padding-left: 1.2rem;
+    margin-top: 1rem;
+}
+
+.card ul li {
+    color: #d0d0d0;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+/* Forzar visibilidad dentro de tarjetas */
+.card-body h5,
+.card-body p {
+    color: #f0f0f0;
+}
+
+/* Mejora visual opcional para títulos */
+.card-title {
+    color: #00bfff; /* celeste más vibrante */
 }
 
 /* Footer */
