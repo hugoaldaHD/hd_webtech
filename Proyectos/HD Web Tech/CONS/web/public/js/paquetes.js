@@ -119,4 +119,142 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const modalEditar = new bootstrap.Modal(document.getElementById('modalEditarPaquete'));
+      const modalEliminar = new bootstrap.Modal(document.getElementById('modalEliminarPaquete'));
+
+      // Referencias a elementos
+      const formEditar = document.getElementById('formEditarPaquete');
+      const editarNombre = document.getElementById('editarNombre');
+      const editarPrecio = document.getElementById('editarPrecio');
+      const editarDetallesContainer = document.getElementById('editarDetallesContainer');
+      const btnAgregarDetalleEditar = document.getElementById('btnAgregarDetalleEditar');
+
+      let paqueteIdEditar = null;
+      let paqueteIdEliminar = null;
+
+      // --- BOTONES EDITAR ---
+      document.querySelectorAll('.btnEditar').forEach(btn => {
+        btn.addEventListener('click', async () => {
+          paqueteIdEditar = btn.getAttribute('data-id');
+
+          // Aquí traemos datos del paquete (puedes cambiar la URL según tu backend)
+          try {
+            const res = await fetch(`/paquetes/${paqueteIdEditar}`);
+            if (!res.ok) throw new Error('Error al cargar datos del paquete');
+            const paquete = await res.json();
+
+            // Rellenar inputs con datos
+            editarNombre.value = paquete.nombre;
+            editarPrecio.value = paquete.precio;
+
+            // Limpiar detalles previos
+            editarDetallesContainer.innerHTML = '';
+
+            // Añadir detalles recibidos (asumo array de strings)
+            paquete.detalles.forEach(detalle => {
+              const input = document.createElement('input');
+              input.type = 'text';
+              input.name = 'detalles[]';
+              input.className = 'form-control mb-2';
+              input.value = detalle;
+              editarDetallesContainer.appendChild(input);
+            });
+
+            modalEditar.show();
+          } catch (error) {
+            alert(error.message);
+          }
+        });
+      });
+
+      // Botón para añadir detalle extra en edición
+      btnAgregarDetalleEditar.addEventListener('click', () => {
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.name = 'detalles[]';
+        input.className = 'form-control mb-2';
+        editarDetallesContainer.appendChild(input);
+      });
+
+      // Enviar formulario editar
+      formEditar.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const detalles = [...editarDetallesContainer.querySelectorAll('input[name="detalles[]"]')]
+          .map(input => input.value.trim())
+          .filter(val => val.length > 0);
+
+        const data = {
+          nombre: editarNombre.value.trim(),
+          precio: parseFloat(editarPrecio.value),
+          detalles: detalles
+        };
+
+        try {
+          const res = await fetch(`/paquetes/${paqueteIdEditar}`, {
+            method: 'PUT', // o PATCH según tu backend
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(data)
+          });
+          if (!res.ok) throw new Error('Error al actualizar paquete');
+
+          modalEditar.hide();
+          // Actualizar la lista o recargar paquetes
+          await cargarPaquetes();
+
+          Swal.fire({
+            icon: 'success',
+            title: 'Paquete actualizado',
+            timer: 1000,
+            showConfirmButton: false
+          });
+
+        } catch (error) {
+          alert(error.message);
+        }
+      });
+
+      // --- BOTONES ELIMINAR ---
+      document.querySelectorAll('.btnEliminar').forEach(btn => {
+        btn.addEventListener('click', () => {
+          paqueteIdEliminar = btn.getAttribute('data-id');
+          modalEliminar.show();
+        });
+      });
+
+      // Confirmar eliminar
+      document.getElementById('btnConfirmarEliminar').addEventListener('click', async () => {
+        if (!paqueteIdEliminar) return;
+
+        try {
+          const res = await fetch(`/paquetes/${paqueteIdEliminar}`, {
+            method: 'DELETE',
+            headers: {'Content-Type': 'application/json'}
+          });
+          if (!res.ok) throw new Error('Error al eliminar paquete');
+
+          modalEliminar.hide();
+          await cargarPaquetes();
+
+          Swal.fire({
+            icon: 'success',
+            title: 'Paquete eliminado',
+            timer: 1000,
+            showConfirmButton: false
+          });
+
+          paqueteIdEliminar = null;
+        } catch (error) {
+          alert(error.message);
+        }
+      });
+
+      // Función para recargar la lista de paquetes (tú debes implementarla)
+      async function cargarPaquetes() {
+        // Aquí tu lógica para recargar paquetes y volver a poner eventListeners
+        // Por ejemplo, hacer fetch, actualizar el DOM, y volver a enlazar botones editar y eliminar
+      }
+    });
 });
