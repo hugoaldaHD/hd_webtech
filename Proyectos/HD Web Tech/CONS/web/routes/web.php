@@ -9,7 +9,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // Llamada para mostrar los paquetes via fetch
 Route::get('/paquetes', function () {
-    $paquetes = Paquete::with('detalles')->get();
+    $paquetes = Paquete::with('detalles')->orderBy('id_paquete','desc')->get();
     return response()->json($paquetes);
 });
 

@@ -12,6 +12,8 @@
     <script src="{{ asset('js/paquetes.js') }}"></script>
     <script src="{{ asset('js/anuncios.js') }}"></script>
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 <body>
     <div class="body-wrapper">

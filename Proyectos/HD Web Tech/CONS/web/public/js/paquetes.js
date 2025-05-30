@@ -16,10 +16,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const addCard = document.createElement('div');
         addCard.className = 'col-md-4 mb-4';
         addCard.innerHTML = `
-            <div class="card h-100 d-flex justify-content-center align-items-center" style="cursor:pointer;" data-bs-toggle="modal" data-bs-target="#modalPaquete">
-                <div class="card-body text-center">
-                    <span style="font-size: 3rem; color: gray;">+</span>
-                    <p class="mt-2">Añadir paquete</p>
+            <div 
+                class="card h-100 d-flex justify-content-center align-items-center border border-dashed border-secondary"
+                style="cursor:pointer; user-select:none; transition: background-color 0.3s, color 0.3s;"
+                data-bs-toggle="modal" data-bs-target="#modalPaquete"
+                onmouseover="this.style.backgroundColor='#f0f0f0'; this.style.color='#007bff';"
+                onmouseout="this.style.backgroundColor=''; this.style.color='gray';"
+            >
+                <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                    <p class="mb-0 fw-semibold text-secondary" style="font-size: 1.5rem">Añadir paquete</p>
                 </div>
             </div>
         `;
@@ -41,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </div>
         `;
-        container.insertBefore(card, container.lastElementChild); // antes del "+"
+        container.insertBefore(card, container.firstChild); // Inserta al inicio para orden descendente
     }
 
     // Añadir nuevo campo de detalle
@@ -94,12 +99,24 @@ document.addEventListener('DOMContentLoaded', () => {
             return response.json();
         })
         .then(data => {
-            console.log('Respuesta del servidor:', data);
-            alert('Paquete guardado con éxito');
+            // Mostrar SweetAlert de éxito
+            Swal.fire({
+                icon: 'success',
+                title: '¡Paquete creado correctamente!',
+                showConfirmButton: false,
+                timer: 1000,
+            }).then(() => {
+                // Redirigir a la lista de paquetes, por ejemplo:
+                window.location.href = '/';
+            });
         })
         .catch(error => {
             console.error('Error al guardar paquete:', error);
-            alert('Error al guardar el paquete');
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'No se pudo guardar el paquete'
+            });
         });
     });
 });
