@@ -15,4 +15,33 @@ class HomeController extends Controller
 
         return view('home', compact('anuncios', 'paquetes'));
     }
+
+    public function store(Request $request)
+    {
+        $validated = $request->validate([
+            'titulo' => 'required|string|max:255',
+            'descripcion' => 'required|string',
+            'precio' => 'required|numeric',
+            'detalles' => 'nullable|array',
+            'detalles.*.texto' => 'required|string|max:255',
+        ]);
+    
+        $paquete = Paquete::create([
+            'titulo' => $validated['titulo'],
+            'descripcion' => $validated['descripcion'],
+            'precio' => $validated['precio']
+        ]);
+    
+        // Guardar detalles si los hay
+        if (!empty($validated['detalles'])) {
+            foreach ($validated['detalles'] as $detalleData) {
+                $paquete->detalles()->create([
+                    'texto' => $detalleData['texto']
+                ]);
+            }
+        }
+    
+        // Devolver con detalles cargados
+        return response()->json($paquete->load('detalles'), 201);
+    }
 }

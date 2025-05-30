@@ -13,6 +13,8 @@ Route::get('/paquetes', function () {
     return response()->json($paquetes);
 });
 
+Route::post('/paquetes/nuevo', [HomeController::class, 'store'])->name('home');
+
 // Llamada para mostrar los anuncios via fetch
 Route::get('/anuncios', function () {
     $anuncios = Anuncio::with('paquete.detalles')
