@@ -73,12 +73,19 @@ class HomeController extends Controller
     public function destroy($id)
     {
         $paquete = Paquete::find($id);
+
         if (!$paquete) {
-            return response()->json(['message' => 'Paquete no encontrado'], 404);
+            return response()->json(['mensaje' => 'Paquete no encontrado'], 404);
+        }
+
+        // Eliminar detalles relacionados si la relación existe
+        if (method_exists($paquete, 'detalles')) {
+            $paquete->detalles()->delete();
         }
 
         $paquete->delete();
 
-        return response()->json(['message' => 'Paquete eliminado']);
+        return response()->json(['mensaje' => 'Paquete y sus detalles eliminados correctamente']);
     }
+
 }

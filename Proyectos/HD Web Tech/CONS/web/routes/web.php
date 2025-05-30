@@ -15,7 +15,7 @@ Route::get('/paquetes', function () {
 
 Route::post('/paquetes/nuevo', [HomeController::class, 'store'])->name('home');
 Route::post('/paquetes/actualizar', [HomeController::class, 'update'])->name('home');
-Route::post('/paquetes/eliminar', [HomeController::class, 'destroy'])->name('home');
+Route::delete('/paquetes/{id}', [HomeController::class, 'destroy']);
 
 // Llamada para mostrar los anuncios via fetch
 Route::get('/anuncios', function () {
