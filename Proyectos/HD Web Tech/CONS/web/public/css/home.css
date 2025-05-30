@@ -47,10 +47,17 @@ html, body {
 .card {
     background-color: #1a1f2c;
     border: 1px solid #2c3e50;
+    height: auto;           /* Sin altura fija */
+    flex-grow: 0;           /* No crecer más allá de su contenido */
+    padding: 1rem;          /* Espaciado interno */
+    overflow: visible;      /* Mostrar contenido sin cortes */
+    display: flex;          /* Para permitir alineación interna si quieres */
+    flex-direction: column; /* Contenido vertical */
+    justify-content: flex-start; /* Contenido arriba */
 }
 
 .card-title {
-    color: #007bff;
+    color: #00bfff; /* celeste más vibrante */
 }
 
 .card ul {
@@ -70,9 +77,12 @@ html, body {
     color: #f0f0f0;
 }
 
-/* Mejora visual opcional para títulos */
-.card-title {
-    color: #00bfff; /* celeste más vibrante */
+/* Contenedor padre para tarjetas - ejemplo */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: flex-start; /* Evita estirar las tarjetas verticalmente */
 }
 
 /* Footer */
@@ -98,7 +108,7 @@ footer a:hover {
     gap: 0.5rem;
 }
 
-ul,p {
+ul, p {
     color: white;
 }
 
