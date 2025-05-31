@@ -19,7 +19,6 @@
         </button>
     </div>
 
-
     <!-- Lista de paquetes -->
     <h2 class="mb-4">Nuestros Paquetes</h2>
     <div class="row" id="paquetes-container">
@@ -49,7 +48,7 @@
                             <div id="detalles-container">
                                 <div class="input-group mb-2">
                                     <input type="text" class="form-control detalle-input" placeholder="Escribe un detalle">
-                                    <button class="btn btn-outline-danger btn-remove-detalle" type="button">&times;</button>
+                                    <button class="btn btn-outline-danger btn-remove-detalle" type="button"><i class="bi bi-trash"></i></button>
                                 </div>
                             </div>
                             <button type="button" class="btn btn-outline-secondary btn-sm" id="btnAddDetalle">Añadir detalle</button>
@@ -61,7 +60,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btn btn-primary">Guardar paquete</button>
+                        <button type="submit" class="btn btn-primary">Crear paquete</button>
                     </div>
                 </form>
             </div>
@@ -85,37 +84,35 @@
         </div>
     </div>
 
-    <!-- Modal editar paquete -->
+    <!-- Modal para editar paquete -->
     <div class="modal fade" id="modalEditarPaquete" tabindex="-1" aria-labelledby="modalEditarPaqueteLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content p-4">
-                <div class="modal-header border-0">
-                    <h5 class="modal-title fw-bold" id="modalEditarPaqueteLabel">Editar paquete</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="formEditarPaquete">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form id="formEditarPaquete">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalEditarPaqueteLabel">Editar Paquete</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body">
                         <div class="mb-3">
-                            <label for="editarNombre" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="editarNombre" name="nombre" required>
+                            <label for="editarNombre" class="form-label">Título</label>
+                            <input type="text" class="form-control" id="editarNombre" required>
                         </div>
                         <div class="mb-3">
-                            <label for="editarPrecio" class="form-label">Precio</label>
-                            <input type="number" min="0" step="0.01" class="form-control" id="editarPrecio" name="precio" required>
+                            <label for="editarPrecio" class="form-label">Precio (€)</label>
+                            <input type="number" class="form-control" id="editarPrecio" step="0.01" required>
                         </div>
                         <div class="mb-3">
-                            <label for="editarDetalles" class="form-label">Detalles</label>
-                            <div id="editarDetallesContainer">
-                              <!-- Aquí se añadirán inputs para los detalles dinámicamente -->
-                            </div>
-                            <button id="btnAgregarDetalleEditar" type="button" class="btn btn-outline-secondary btn-sm mt-2">+ Añadir detalle</button>
+                            <label class="form-label">Detalles</label>
+                            <div id="editarDetallesContainer"></div>
+                            <button type="button" class="btn btn-outline-secondary btn-sm mt-2" id="btnAgregarDetalleEditar">Añadir detalle</button>
                         </div>
-                    </form>
-                </div>
-                <div class="modal-footer border-0 justify-content-end">
-                    <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">Cancelar</button>
-                    <button id="btnGuardarEdicion" type="submit" form="formEditarPaquete" class="btn btn-primary px-4">Guardar</button>
-                </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

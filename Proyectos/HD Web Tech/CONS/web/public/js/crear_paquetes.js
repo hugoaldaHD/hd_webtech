@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         inputGroup.className = 'input-group mb-2';
         inputGroup.innerHTML = `
             <input type="text" class="form-control detalle-input" placeholder="Escribe un detalle">
-            <button class="btn btn-outline-danger btn-remove-detalle" type="button">&times;</button>
+            <button class="btn btn-outline-danger btn-remove-detalle" type="button"><i class="bi bi-trash"></i></button>
         `;
         container.appendChild(inputGroup);
     });
