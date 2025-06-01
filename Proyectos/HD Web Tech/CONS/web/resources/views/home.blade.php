@@ -95,8 +95,8 @@
                     </div>
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label for="editarNombre" class="form-label">Título</label>
-                            <input type="text" class="form-control" id="editarNombre" required>
+                            <label for="editarTitulo" class="form-label">Título</label>
+                            <input type="text" class="form-control" id="editarTitulo" required>
                         </div>
                         <div class="mb-3">
                             <label for="editarDescripcion" class="form-label">Descripción</label>
