@@ -90,7 +90,7 @@
             <div class="modal-content">
                 <form id="formEditarPaquete">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="modalEditarPaqueteLabel">Editar Paquete</h5>
+                        <h5 class="modal-title" id="modalEditarPaqueteLabel">Editar paquete</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                     </div>
                     <div class="modal-body">
@@ -99,13 +99,17 @@
                             <input type="text" class="form-control" id="editarNombre" required>
                         </div>
                         <div class="mb-3">
-                            <label for="editarPrecio" class="form-label">Precio (€)</label>
-                            <input type="number" class="form-control" id="editarPrecio" step="0.01" required>
+                            <label for="editarDescripcion" class="form-label">Descripción</label>
+                            <textarea class="form-control" id="editarDescripcion" required></textarea>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Detalles</label>
                             <div id="editarDetallesContainer"></div>
                             <button type="button" class="btn btn-outline-secondary btn-sm mt-2" id="btnAgregarDetalleEditar">Añadir detalle</button>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editarPrecio" class="form-label">Precio (€)</label>
+                            <input type="number" class="form-control" id="editarPrecio" step="0.01" required>
                         </div>
                     </div>
                     <div class="modal-footer">

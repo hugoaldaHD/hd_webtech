@@ -13,8 +13,20 @@ Route::get('/paquetes', function () {
     return response()->json($paquetes);
 });
 
+// Ruta para modal de un solo paquete
+Route::get('/paquetes/{id}', function ($id) {
+    $paquete = \App\Models\Paquete::with('detalles')->findOrFail($id);
+    return response()->json([
+        'id' => $paquete->id_paquete,
+        'nombre' => $paquete->titulo,
+        'descripcion' => $paquete->descripcion,
+        'detalles' => $paquete->detalles->pluck('texto'), // solo texto
+        'precio' => $paquete->precio
+    ]);
+});
+
 Route::post('/paquetes/nuevo', [HomeController::class, 'store'])->name('home');
-Route::post('/paquetes/actualizar', [HomeController::class, 'update'])->name('home');
+Route::put('/paquetes/{id}', [HomeController::class, 'update']);
 Route::delete('/paquetes/{id}', [HomeController::class, 'destroy']);
 
 // Llamada para mostrar los anuncios via fetch

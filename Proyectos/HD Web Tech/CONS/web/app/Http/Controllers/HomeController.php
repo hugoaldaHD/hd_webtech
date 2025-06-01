@@ -47,28 +47,39 @@ class HomeController extends Controller
 
     public function update(Request $request, $id)
     {
-        $paquete = Paquete::find($id);
-        if (!$paquete) {
-            return response()->json(['message' => 'Paquete no encontrado'], 404);
-        }
-
-        $data = $request->validate([
-            'nombre' => 'required|string|max:255',
-            'precio' => 'required|numeric',
-            'detalles' => 'array',
-            'detalles.*' => 'string|max:255',
-        ]);
-
-        $paquete->nombre = $data['nombre'];
-        $paquete->precio = $data['precio'];
-
-        // Aquí guardas detalles, depende cómo tengas la relación (asumo campo JSON)
-        $paquete->detalles = $data['detalles'] ?? [];
+        try {
+            $paquete = Paquete::findOrFail($id);
         
-        $paquete->save();
-
-        return response()->json(['message' => 'Paquete actualizado']);
+            $data = $request->validate([
+                'titulo' => 'required|string|max:255',
+                'precio' => 'required|numeric',
+                'descripcion' => 'required|string',
+                'detalles' => 'nullable|array',
+                'detalles.*.texto' => 'required|string|max:255',
+            ]);
+        
+            $paquete->titulo = $data['titulo'];
+            $paquete->precio = $data['precio'];
+            $paquete->descripcion = $data['descripcion'];
+        
+            $paquete->save();
+        
+            // Actualizar detalles
+            $paquete->detalles()->delete();
+            if (!empty($data['detalles'])) {
+                foreach ($data['detalles'] as $detalle) {
+                    $paquete->detalles()->create([
+                        'texto' => $detalle['texto']
+                    ]);
+                }
+            }
+        
+            return response()->json(['message' => 'Paquete actualizado']);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
     }
+
 
     public function destroy($id)
     {
