@@ -24,4 +24,9 @@ class Paquete extends Model
     {
         return $this->hasMany(Anuncio::class, 'id_paquete');
     }
+
+    public function tipos()
+    {
+        return $this->belongsToMany(Tipo::class, 'tipos_paquetes', 'id_paquete', 'id_tipo');
+    }
 }
