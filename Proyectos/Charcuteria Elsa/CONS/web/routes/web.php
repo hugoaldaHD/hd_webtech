@@ -1,11 +1,20 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
 use App\Models\Paquete;
 use App\Models\Anuncio;
 
-Route::get('/admin', [HomeController::class, 'index'])->name('admin');
+// Cliente
+
+Route::get('/', [HomeController::class, 'novedades'])->name('novedades');
+Route::get('/productos', [HomeController::class, 'productos'])->name('productos');
+Route::get('/como-llegar', [HomeController::class, 'comoLlegar'])->name('como-llegar');
+
+// Administrador
+
+Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 
 // Llamada para mostrar los paquetes via fetch
 Route::get('/paquetes', function () {
@@ -25,9 +34,9 @@ Route::get('/paquetes/{id}', function ($id) {
     ]);
 });
 
-Route::post('/paquetes/nuevo', [HomeController::class, 'store'])->name('admin');
-Route::put('/paquetes/{id}', [HomeController::class, 'update']);
-Route::delete('/paquetes/{id}', [HomeController::class, 'destroy']);
+Route::post('/paquetes/nuevo', [AdminController::class, 'store'])->name('admin');
+Route::put('/paquetes/{id}', [AdminController::class, 'update']);
+Route::delete('/paquetes/{id}', [AdminController::class, 'destroy']);
 
 // Llamada para mostrar los anuncios via fetch
 Route::get('/anuncios', function () {
