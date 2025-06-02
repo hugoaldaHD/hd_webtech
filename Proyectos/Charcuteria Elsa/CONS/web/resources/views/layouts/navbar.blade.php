@@ -28,7 +28,7 @@
         <!-- navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="{{ route('home') }}">Charcutería Elsa</a>
+                <a class="navbar-brand" href="{{ route('admin') }}">Charcutería Elsa</a>
             </div>
         </nav>
 

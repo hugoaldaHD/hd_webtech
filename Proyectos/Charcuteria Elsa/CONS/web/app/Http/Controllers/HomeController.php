@@ -13,7 +13,7 @@ class HomeController extends Controller
         $anuncios = Anuncio::where('visible', true)->orderBy('orden')->get();
         $paquetes = Paquete::with('detalles')->get();
 
-        return view('home', compact('anuncios', 'paquetes'));
+        return view('admin', compact('anuncios', 'paquetes'));
     }
 
     public function store(Request $request)

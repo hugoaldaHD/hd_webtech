@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="col-md-6">
                             <div class="card h-100">
                                 <div class="card-body">
-                                    <h5 class="card-title"><i class="bi bi-box-seam"></i> ${anuncio.paquete.titulo}</h5>
+                                    <h5 class="card-title"></i> ${anuncio.paquete.titulo}</h5>
                                     <p class="card-text">${anuncio.paquete.descripcion}</p>
                                     <ul>${detalles}</ul>
                                     <p><strong>Precio:</strong> ${parseFloat(anuncio.paquete.precio).toFixed(2)} €</p>

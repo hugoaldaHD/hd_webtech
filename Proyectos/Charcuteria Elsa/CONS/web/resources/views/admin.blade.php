@@ -6,6 +6,7 @@
 @section('content')
 
     <!-- Carrusel de anuncios -->
+    <h2 class="mb-4">Novedades</h2>
     <div id="carouselAnuncios" class="carousel slide mb-5" data-bs-ride="carousel">
         <div class="carousel-indicators" id="carousel-indicators"></div>
         <div class="carousel-inner" id="carousel-inner"></div>
@@ -20,7 +21,7 @@
     </div>
 
     <!-- Lista de paquetes -->
-    <h2 class="mb-4">Nuestros Paquetes</h2>
+    <h2 class="mb-4">Nuestros productos</h2>
     <div class="row" id="paquetes-container">
         <!-- Aquí se insertarán dinámicamente los paquetes -->
     </div>

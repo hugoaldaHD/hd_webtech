@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         card.innerHTML = `
             <div class="card h-100">
                 <div class="card-body">
-                    <h5 class="card-title"><i class="bi bi-box-seam"></i> ${paquete.titulo}</h5>
+                    <h5 class="card-title"></i> ${paquete.titulo}</h5>
                     <p class="card-text">${paquete.descripcion}</p>
                     <ul>${detalles}</ul>
                     <p><strong>Precio:</strong> ${parseFloat(paquete.precio).toFixed(2)} €</p>

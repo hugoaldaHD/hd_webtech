@@ -5,7 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Models\Paquete;
 use App\Models\Anuncio;
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/admin', [HomeController::class, 'index'])->name('admin');
 
 // Llamada para mostrar los paquetes via fetch
 Route::get('/paquetes', function () {
@@ -25,7 +25,7 @@ Route::get('/paquetes/{id}', function ($id) {
     ]);
 });
 
-Route::post('/paquetes/nuevo', [HomeController::class, 'store'])->name('home');
+Route::post('/paquetes/nuevo', [HomeController::class, 'store'])->name('admin');
 Route::put('/paquetes/{id}', [HomeController::class, 'update']);
 Route::delete('/paquetes/{id}', [HomeController::class, 'destroy']);
 
