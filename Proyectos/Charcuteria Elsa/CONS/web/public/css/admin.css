@@ -288,3 +288,7 @@ textarea.form-control:focus {
     justify-content: flex-end;
     gap: 0.75rem;
 }
+
+table ul {
+    color: black;
+}
