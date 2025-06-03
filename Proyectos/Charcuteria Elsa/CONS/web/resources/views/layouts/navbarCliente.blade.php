@@ -1,8 +1,8 @@
 @php
     $favicon = match(View::getSection('title')) {
-        'Novedades' => asset('icons/bullhorn-solid.svg'),
-        'Productos' => asset('icons/box-open-solid.svg'),
-        'Cómo llegar' => asset('icons/map-location-dot-solid.svg')
+        'Novedades' => asset('icons/novedades.svg'),
+        'Productos' => asset('icons/productos.svg'),
+        'Cómo llegar' => asset('icons/mapa.svg')
     };
 @endphp
 <link rel="icon" type="image/x-icon" href="{{ $favicon }}">

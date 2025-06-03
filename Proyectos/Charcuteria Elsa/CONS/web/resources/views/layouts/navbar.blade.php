@@ -21,6 +21,8 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Fontawesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <!-- Icono y título -->
+    <link rel="icon" type="image/x-icon" href="{{ asset('icons/admin.svg') }}">
     <title>Dashboard Admin</title>
 </head>
 <body>
