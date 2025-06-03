@@ -4,7 +4,7 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', sans-serif;
-    background-color: #0d1117;
+    background-color: #480B23;
     color: #f0f0f0;
 }
 
@@ -21,13 +21,13 @@ html, body {
 
 /* Navbar */
 .navbar {
-    background-color: #0a1f44;
-    border-bottom: 2px solid #007bff;
+    background-color: #90214D;
+    border-bottom: 2px solid #FB68A2;
 }
 
 .navbar .navbar-brand {
     font-weight: bold;
-    color: #007bff;
+    color: #FB68A2;
     font-size: 1.5rem;
 }
 

@@ -1,0 +1,344 @@
+/* General */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #480B23; /* Fondo general */
+    color: #f0f0f0;
+}
+
+/* Layout */
+.body-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #90214D; /* Fondo navbar */
+    border-bottom: 2px solid #FB68A2; /* Línea inferior navbar */
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link,
+.navbar .navbar-text {
+    color: #FB68A2 !important; /* Texto navbar */
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Botones Navbar activos */
+.btn-outline-light.active,
+.btn-outline-light:hover {
+    background-color: #FB68A2;
+    color: #000;
+    border-color: #FB68A2;
+}
+
+/* Botón principal */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #0069d9;
+    border-color: #005cbf;
+}
+
+/* Tarjetas */
+.card {
+    background-color: #1a1f2c;
+    border: 1px solid #2c3e50;
+    height: auto;
+    flex-grow: 0;
+    padding: 1rem;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.card-title {
+    color: #00bfff;
+}
+
+.card ul {
+    padding-left: 1.2rem;
+    margin-top: 1rem;
+}
+
+.card ul li {
+    color: #d0d0d0;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.card-body h5,
+.card-body p {
+    color: #f0f0f0;
+}
+
+/* Contenedor de tarjetas */
+.cards-container,
+#paquetes-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+/* Footer */
+footer {
+    background-color: #90214D;
+    color: #FB68A2; /* Texto footer */
+    border-top: 2px solid #FB68A2; /* Borde superior footer */
+}
+
+footer a {
+    color: #FB68A2;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Botones con íconos */
+.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Textos generales */
+ul, p {
+    color: white;
+}
+
+/* Sección Títulos */
+.section-title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #FB68A2; /* Título con color destacado */
+    text-shadow: 1px 1px 2px #000;
+    text-align: center;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: #e2e2e2;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Estilo carrusel */
+#carouselAnuncios .carousel-item {
+    transition: transform 0.6s ease;
+}
+
+#carouselAnuncios .carousel-control-prev-icon,
+#carouselAnuncios .carousel-control-next-icon {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    padding: 10px;
+}
+
+#carouselAnuncios .carousel-inner {
+    margin-top: 1.5rem;
+}
+
+/* MODALES */
+/* Modal Crear */
+#modalPaquete .modal-content {
+    border-radius: 12px;
+    padding: 1.5rem;
+    background: #ffffff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#modalPaquete .modal-header {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+#modalPaquete .modal-title {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #343a40;
+}
+
+#modalPaquete .modal-body {
+    margin-top: 1rem;
+    color: #495057;
+}
+
+#modalPaquete label.form-label {
+    font-weight: 600;
+    color: #495057;
+}
+
+#modalPaquete input.form-control,
+#modalPaquete textarea.form-control {
+    border-radius: 8px;
+    border: 1.5px solid #ced4da;
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+    transition: border-color 0.3s ease;
+}
+
+#modalPaquete input.form-control:focus,
+#modalPaquete textarea.form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 5px rgba(13, 110, 253, 0.4);
+}
+
+#modalPaquete #detalles-container .input-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#modalPaquete #detalles-container .detalle-input {
+    flex-grow: 1;
+}
+
+#modalPaquete .btn-remove-detalle {
+    border-radius: 6px;
+    border: 1px solid #dc3545;
+    color: #dc3545;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#modalPaquete .btn-remove-detalle:hover {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+#modalPaquete .btn-outline-secondary {
+    border-radius: 6px;
+    font-size: 0.9rem;
+    padding: 0.3rem 0.8rem;
+}
+
+#modalPaquete .modal-footer {
+    border-top: none;
+    padding-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+}
+
+#modalPaquete .btn-primary {
+    background-color: #0d6efd;
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 1.4rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+#modalPaquete .btn-primary:hover {
+    background-color: #0b5ed7;
+}
+
+#modalPaquete .btn-secondary {
+    border-radius: 8px;
+    padding: 0.6rem 1.4rem;
+}
+
+/* Modal Editar / Eliminar */
+.modal-content {
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.modal-header {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.modal-title {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #343a40;
+}
+
+.modal-body {
+    margin-top: 1rem;
+    color: #495057;
+}
+
+.form-label {
+    font-weight: 600;
+    color: #495057;
+}
+
+input.form-control,
+textarea.form-control {
+    border-radius: 8px;
+    border: 1.5px solid #ced4da;
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input.form-control:focus,
+textarea.form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 5px rgba(13, 110, 253, 0.4);
+}
+
+.btn-outline-secondary {
+    border-radius: 6px;
+    font-size: 0.9rem;
+    padding: 0.3rem 0.8rem;
+}
+
+.btn-primary {
+    background-color: #0d6efd;
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 1.4rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+}
+
+.btn-secondary {
+    border-radius: 8px;
+    padding: 0.6rem 1.4rem;
+}
+
+.modal-footer {
+    border-top: none;
+    padding-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+}
+
+/* Responsive Títulos */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+    }
+}

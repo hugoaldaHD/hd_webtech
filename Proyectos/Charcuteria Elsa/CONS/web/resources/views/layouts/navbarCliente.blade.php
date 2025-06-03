@@ -21,7 +21,7 @@
         <script src="{{ asset('js/cliente/listar_paquetes.js') }}"></script>
         <script src="{{ asset('js/cliente/listar_anuncios.js') }}"></script>
         {{-- CSS --}}
-        <link href="{{ asset('css/home.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/cliente.css') }}" rel="stylesheet">
         <!-- bootstrap -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
@@ -31,7 +31,7 @@
     <div class="body-wrapper">
 
         <!-- navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <!-- Marca / Título -->
                 <a class="navbar-brand" href="{{ route('novedades') }}">Xarcutería Elsa</a>
@@ -62,7 +62,7 @@
         </div>
 
         <!-- footer -->
-        <footer class="bg-dark text-white mt-auto">
+        <footer class="text-white mt-auto">
             <div class="container py-4 text-center">
                 <p class="mb-1">© {{ date('Y') }} Xarcutería Elsa. Todos los derechos reservados.</p>
                 <small>Desarrollado por H&D WebTech | <a class="text-white">Contáctanos</a></small>
