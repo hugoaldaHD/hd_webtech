@@ -34,7 +34,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
                 <!-- Marca / Título -->
-                <a class="navbar-brand" href="{{ route('novedades') }}">Charcutería Elsa</a>
+                <a class="navbar-brand" href="{{ route('novedades') }}">Xarcutería Elsa</a>
 
                 <!-- Botones alineados a la derecha -->
                 <div class="ms-auto">
@@ -64,8 +64,8 @@
         <!-- footer -->
         <footer class="bg-dark text-white mt-auto">
             <div class="container py-4 text-center">
-                <p class="mb-1">© {{ date('Y') }} Charcutería Elsa. Todos los derechos reservados.</p>
-                <small>Desarrollado por HD Tech | <a class="text-white">Contáctanos</a></small>
+                <p class="mb-1">© {{ date('Y') }} Xarcutería Elsa. Todos los derechos reservados.</p>
+                <small>Desarrollado por H&D WebTech | <a class="text-white">Contáctanos</a></small>
             </div>
         </footer>
 

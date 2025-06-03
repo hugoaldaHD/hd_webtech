@@ -7,13 +7,13 @@ use App\Models\Paquete;
 use App\Models\Anuncio;
 
 // Cliente
+Route::redirect('/', '/novedades')->name('root');
+Route::get('/novedades', [HomeController::class, 'novedades'])->name('novedades');
 
-Route::get('/', [HomeController::class, 'novedades'])->name('novedades');
 Route::get('/productos', [HomeController::class, 'productos'])->name('productos');
 Route::get('/como-llegar', [HomeController::class, 'comoLlegar'])->name('como-llegar');
 
 // Administrador
-
 Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 
 // Llamada para mostrar los paquetes via fetch

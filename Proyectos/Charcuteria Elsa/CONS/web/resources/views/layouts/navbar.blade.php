@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Charcutería Elsa</title>
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
@@ -20,7 +19,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- sweetalert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+    
+    <title>Dashboard Admin</title>
 </head>
 <body>
     <div class="body-wrapper">
@@ -28,7 +28,7 @@
         <!-- navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="{{ route('novedades') }}">Charcutería Elsa</a>
+                <a class="navbar-brand" href="{{ route('novedades') }}">Xarcutería Elsa</a>
             </div>
         </nav>
 
@@ -40,8 +40,8 @@
         <!-- footer -->
         <footer class="bg-dark text-white mt-auto">
             <div class="container py-4 text-center">
-                <p class="mb-1">© {{ date('Y') }} Charcutería Elsa. Todos los derechos reservados.</p>
-                <small>Desarrollado por HD Tech | <a class="text-white">Contáctanos</a></small>
+                <p class="mb-1">© {{ date('Y') }} Xarcutería Elsa. Todos los derechos reservados.</p>
+                <small>Desarrollado por H&D WebTech | <a class="text-white">Contáctanos</a></small>
             </div>
         </footer>
 
