@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch('/anuncios')
         .then(response => response.json())
         .then(anuncios => {
-            console.log('Anuncios cargados:', anuncios); // 👈 Verifica la estructura
+            console.log('Anuncios cargados:', anuncios);
 
             const indicators = document.getElementById('carousel-indicators');
             const inner = document.getElementById('carousel-inner');
