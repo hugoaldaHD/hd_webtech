@@ -10,10 +10,20 @@ class AdminController extends Controller
 {
     public function index()
     {
-        $anuncios = Anuncio::where('visible', true)->orderBy('orden')->get();
+        $anuncios = Anuncio::with(['paquete.detalles'])
+                      ->orderBy('id_anuncio')
+                      ->get();
+
         $paquetes = Paquete::with('detalles')->get();
 
         return view('admin', compact('anuncios', 'paquetes'));
+    }
+
+    public function getAnuncios()
+    {
+        return Anuncio::with(['paquete.detalles'])
+                      ->orderBy('id_anuncio')
+                      ->get();
     }
 
     public function store(Request $request)

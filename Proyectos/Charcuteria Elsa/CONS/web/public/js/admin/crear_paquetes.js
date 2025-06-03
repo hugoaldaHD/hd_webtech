@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 title: '¡Paquete creado correctamente!',
                 showConfirmButton: false,
                 timer: 1000
-            }).then(() => window.location.href = '/');
+            }).then(() => window.location.href = 'admin');
         })
         .catch(error => {
             console.error('Error al guardar paquete:', error);

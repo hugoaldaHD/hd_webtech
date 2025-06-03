@@ -21,9 +21,27 @@
     </div>
 
     <!-- Lista de paquetes -->
-    <h2 class="mb-4">Nuestros productos</h2>
-    <div class="row" id="paquetes-container">
-        <!-- Aquí se insertarán dinámicamente los paquetes -->
+    <h2 class="mb-4 d-flex justify-content-between align-items-center">
+        Nuestros productos
+        <button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modalPaquete">
+            <i class="bi bi-plus-circle me-2"></i> Añadir paquete
+        </button>
+    </h2>
+    <div class="table-responsive">
+        <table class="table table-striped align-middle">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Descripción</th>
+                    <th>Detalles</th>
+                    <th>Precio</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="paquetes-container">
+                <!-- Se insertan filas dinámicamente -->
+            </tbody>
+        </table>
     </div>
 
     <!-- Modal para añadir paquete -->

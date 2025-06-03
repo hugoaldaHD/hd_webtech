@@ -34,15 +34,9 @@ Route::get('/paquetes/{id}', function ($id) {
     ]);
 });
 
-Route::post('/paquetes/nuevo', [AdminController::class, 'store'])->name('admin');
+Route::post('/paquetes/nuevo', [AdminController::class, 'store']);
 Route::put('/paquetes/{id}', [AdminController::class, 'update']);
 Route::delete('/paquetes/{id}', [AdminController::class, 'destroy']);
 
 // Llamada para mostrar los anuncios via fetch
-Route::get('/anuncios', function () {
-    $anuncios = Anuncio::with('paquete.detalles')
-        ->where('visible', true)
-        ->orderBy('orden')
-        ->get();
-    return response()->json($anuncios);
-});
+Route::get('/anuncios', [AdminController::class, 'getAnuncios']);

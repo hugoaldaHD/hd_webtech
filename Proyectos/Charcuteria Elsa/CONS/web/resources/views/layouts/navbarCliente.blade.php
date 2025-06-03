@@ -17,6 +17,9 @@
     @stack('styles')
 
     {{-- GENERAL --}}
+        {{-- JS --}}
+        <script src="{{ asset('js/cliente/listar_paquetes.js') }}"></script>
+        <script src="{{ asset('js/cliente/listar_anuncios.js') }}"></script>
         {{-- CSS --}}
         <link href="{{ asset('css/home.css') }}" rel="stylesheet">
         <!-- bootstrap -->
@@ -31,7 +34,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
                 <!-- Marca / Título -->
-                <a class="navbar-brand" href="{{ route('admin') }}">Charcutería Elsa</a>
+                <a class="navbar-brand" href="{{ route('novedades') }}">Charcutería Elsa</a>
 
                 <!-- Botones alineados a la derecha -->
                 <div class="ms-auto">

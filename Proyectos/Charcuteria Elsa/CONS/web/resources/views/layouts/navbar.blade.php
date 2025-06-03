@@ -11,11 +11,11 @@
     <!-- Css -->
     <link href="{{ asset('css/home.css') }}" rel="stylesheet">
     <!-- Js -->
-    <script src="{{ asset('js/listar_paquetes.js') }}"></script>
-    <script src="{{ asset('js/crear_paquetes.js') }}"></script>
-    <script src="{{ asset('js/editar_paquetes.js') }}"></script>
-    <script src="{{ asset('js/eliminar_paquetes.js') }}"></script>
-    <script src="{{ asset('js/listar_anuncios.js') }}"></script>
+    <script src="{{ asset('js/admin/listar_paquetes.js') }}"></script>
+    <script src="{{ asset('js/admin/crear_paquetes.js') }}"></script>
+    <script src="{{ asset('js/admin/editar_paquetes.js') }}"></script>
+    <script src="{{ asset('js/admin/eliminar_paquetes.js') }}"></script>
+    <script src="{{ asset('js/admin/listar_anuncios.js') }}"></script>
     <!-- csrf token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- sweetalert -->
@@ -28,7 +28,7 @@
         <!-- navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="{{ route('admin') }}">Charcutería Elsa</a>
+                <a class="navbar-brand" href="{{ route('novedades') }}">Charcutería Elsa</a>
             </div>
         </nav>
 
