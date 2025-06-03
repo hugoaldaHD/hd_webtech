@@ -26,7 +26,7 @@
     <div class="body-wrapper">
 
         <!-- navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand" href="{{ route('novedades') }}">Xarcutería Elsa</a>
             </div>
@@ -38,7 +38,7 @@
         </div>
 
         <!-- footer -->
-        <footer class="bg-dark text-white mt-auto">
+        <footer class="text-white mt-auto">
             <div class="container py-4 text-center">
                 <p class="mb-1">© {{ date('Y') }} Xarcutería Elsa. Todos los derechos reservados.</p>
                 <small>Desarrollado por H&D WebTech | <a class="text-white">Contáctanos</a></small>

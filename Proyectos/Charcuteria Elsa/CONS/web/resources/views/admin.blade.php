@@ -23,7 +23,7 @@
     <!-- Lista de paquetes -->
     <h2 class="mb-4 d-flex justify-content-between align-items-center">
         Nuestros productos
-        <button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modalPaquete">
+        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalPaquete">
             <i class="bi bi-plus-circle me-2"></i> Añadir paquete
         </button>
     </h2>

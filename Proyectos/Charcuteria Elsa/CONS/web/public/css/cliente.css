@@ -4,7 +4,6 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', sans-serif;
-    background-color: #480B23; /* Fondo general */
     color: #f0f0f0;
 }
 
@@ -21,24 +20,14 @@ html, body {
 
 /* Navbar */
 .navbar {
-    background-color: #90214D; /* Fondo navbar */
-    border-bottom: 2px solid #FB68A2; /* Línea inferior navbar */
+    background-color: #90214D;
+    border-bottom: 2px solid #FB68A2;
 }
 
-.navbar .navbar-brand,
-.navbar .nav-link,
-.navbar .navbar-text {
-    color: #FB68A2 !important; /* Texto navbar */
+.navbar .navbar-brand {
     font-weight: bold;
-    font-size: 1.1rem;
-}
-
-/* Botones Navbar activos */
-.btn-outline-light.active,
-.btn-outline-light:hover {
-    background-color: #FB68A2;
-    color: #000;
-    border-color: #FB68A2;
+    color: white;
+    font-size: 1.5rem;
 }
 
 /* Botón principal */
@@ -56,54 +45,56 @@ html, body {
 /* Tarjetas */
 .card {
     background-color: #1a1f2c;
+    color: black;
     border: 1px solid #2c3e50;
-    height: auto;
-    flex-grow: 0;
-    padding: 1rem;
-    overflow: visible;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    height: auto;           /* Sin altura fija */
+    flex-grow: 0;           /* No crecer más allá de su contenido */
+    padding: 1rem;          /* Espaciado interno */
+    overflow: visible;      /* Mostrar contenido sin cortes */
+    display: flex;          /* Para permitir alineación interna si quieres */
+    flex-direction: column; /* Contenido vertical */
+    justify-content: flex-start; /* Contenido arriba */
 }
 
 .card-title {
-    color: #00bfff;
+    color: black;
 }
 
 .card ul {
+    color: black;
     padding-left: 1.2rem;
     margin-top: 1rem;
 }
 
 .card ul li {
-    color: #d0d0d0;
+    color: black;
     margin-bottom: 0.5rem;
     line-height: 1.4;
 }
 
-.card-body h5,
-.card-body p {
-    color: #f0f0f0;
+.card p {
+    color: black;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
 }
 
-/* Contenedor de tarjetas */
-.cards-container,
-#paquetes-container {
+/* Contenedor padre para tarjetas - ejemplo */
+.cards-container {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    align-items: flex-start;
+    align-items: flex-start; /* Evita estirar las tarjetas verticalmente */
 }
 
 /* Footer */
 footer {
     background-color: #90214D;
-    color: #FB68A2; /* Texto footer */
-    border-top: 2px solid #FB68A2; /* Borde superior footer */
+    color: #cfd8e3;
+    border-top: 2px solid #FB68A2;
 }
 
 footer a {
-    color: #FB68A2;
+    color: #007bff;
     text-decoration: none;
 }
 
@@ -118,46 +109,11 @@ footer a:hover {
     gap: 0.5rem;
 }
 
-/* Textos generales */
 ul, p {
     color: white;
 }
 
-/* Sección Títulos */
-.section-title {
-    font-size: 2.2rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    color: #FB68A2; /* Título con color destacado */
-    text-shadow: 1px 1px 2px #000;
-    text-align: center;
-}
-
-.section-subtitle {
-    font-size: 1.1rem;
-    color: #e2e2e2;
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-/* Estilo carrusel */
-#carouselAnuncios .carousel-item {
-    transition: transform 0.6s ease;
-}
-
-#carouselAnuncios .carousel-control-prev-icon,
-#carouselAnuncios .carousel-control-next-icon {
-    background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 50%;
-    padding: 10px;
-}
-
-#carouselAnuncios .carousel-inner {
-    margin-top: 1.5rem;
-}
-
-/* MODALES */
-/* Modal Crear */
+/* Estilos modal creación nuevo paquete */
 #modalPaquete .modal-content {
     border-radius: 12px;
     padding: 1.5rem;
@@ -256,7 +212,7 @@ ul, p {
     padding: 0.6rem 1.4rem;
 }
 
-/* Modal Editar / Eliminar */
+/* Estilos modales editar y eliminar */
 .modal-content {
     border-radius: 12px;
     background: #ffffff;
@@ -330,15 +286,4 @@ textarea.form-control:focus {
     display: flex;
     justify-content: flex-end;
     gap: 0.75rem;
-}
-
-/* Responsive Títulos */
-@media (max-width: 768px) {
-    .section-title {
-        font-size: 1.8rem;
-    }
-
-    .section-subtitle {
-        font-size: 1rem;
-    }
 }

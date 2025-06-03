@@ -54,8 +54,6 @@
             </div>
         </nav>
 
-
-
         <!-- contenido principal -->
         <div class="container py-5 main-content">
             @yield('content')
