@@ -9,9 +9,9 @@ return new class extends Migration {
     {
         Schema::create('usuarios', function (Blueprint $table) {
             $table->id('id_usuario');
-            $table->string('nombre');
-            $table->string('correo')->unique();
-            $table->string('password');
+            $table->string('nombre')->nullable();
+            $table->string('correo')->nullable()->unique();
+            $table->string('password')->nullable();
             $table->string('telefono', 20)->nullable();
             $table->unsignedBigInteger('id_rol');
             $table->timestamps();
