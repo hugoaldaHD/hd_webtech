@@ -13,7 +13,9 @@ class DatabaseSeeder extends Seeder
             DetallesPaquetesSeeder::class,
             AnunciosSeeder::class,
             RolesSeeder::class,
-            UsersSeeder::class
+            UsersSeeder::class,
+            TiposSeeder::class,
+            TiposPaquetesSeeder::class
         ]);
     }
 }

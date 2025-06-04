@@ -14,8 +14,9 @@ class Tipos extends Model
         'nombre_tipos',
     ];
 
-    public function paquetes()
+    // Relación con la tabla intermedia
+    public function tiposPaquetes()
     {
-        return $this->belongsToMany(Paquete::class, 'tipos_paquetes', 'id_tipos', 'id_paquete');
+        return $this->hasMany(TiposPaquete::class, 'id_tipos', 'id_tipos');
     }
 }

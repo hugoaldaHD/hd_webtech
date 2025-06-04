@@ -14,4 +14,10 @@ class TiposPaquete extends Model
         'id_tipos',
         'id_paquete',
     ];
+
+    // Relación inversa con Tipos (padre)
+    public function tipo()
+    {
+        return $this->belongsTo(Tipos::class, 'id_tipos', 'id_tipos');
+    }
 }
