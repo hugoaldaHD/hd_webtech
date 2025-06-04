@@ -26,8 +26,7 @@
 
     {{-- GENERAL --}}
         {{-- JS --}}
-        <script src="{{ asset('js/cliente/listar_paquetes.js') }}"></script>
-        <script src="{{ asset('js/cliente/listar_anuncios.js') }}"></script>
+
         {{-- CSS --}}
         <link href="{{ asset('css/cliente.css') }}" rel="stylesheet">
         <!-- bootstrap -->

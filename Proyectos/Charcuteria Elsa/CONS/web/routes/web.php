@@ -40,3 +40,4 @@ Route::delete('/paquetes/{id}', [AdminController::class, 'destroy']);
 
 // Llamada para mostrar los anuncios via fetch
 Route::get('/anuncios', [AdminController::class, 'getAnuncios']);
+

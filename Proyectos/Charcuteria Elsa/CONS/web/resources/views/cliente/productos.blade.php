@@ -11,3 +11,7 @@
         <!-- Las tarjetas se insertan dinámicamente aquí -->
     </div>
 @endsection
+
+@push('scripts')
+    <script src="{{ asset('js/cliente/listar_paquetes.js') }}"></script>
+@endpush

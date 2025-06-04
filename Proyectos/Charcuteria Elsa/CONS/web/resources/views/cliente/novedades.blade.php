@@ -21,3 +21,7 @@
         </div>
     </div>
 @endsection
+
+@push('scripts')
+    <script src="{{ asset('js/cliente/listar_anuncios.js') }}"></script>
+@endpush

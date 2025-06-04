@@ -12,32 +12,32 @@ class TiposSeeder extends Seeder
     {
         DB::table('tipos')->insert([
             [
-                'nombre_tipos' => 'Carne',
+                'nombre_tipo' => 'Carne',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'nombre_tipos' => 'Pescado',
+                'nombre_tipo' => 'Pescado',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'nombre_tipos' => 'Lacteo',
+                'nombre_tipo' => 'Lacteo',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'nombre_tipos' => 'Cereal',
+                'nombre_tipo' => 'Cereal',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'nombre_tipos' => 'Verdura',
+                'nombre_tipo' => 'Verdura',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'nombre_tipos' => 'Fruta',
+                'nombre_tipo' => 'Fruta',
                 'created_at' => now(),
                 'updated_at' => now()
             ]
