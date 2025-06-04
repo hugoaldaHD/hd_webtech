@@ -10,12 +10,12 @@ class UsersSeeder extends Seeder
 {
     public function run(): void
     {
-        DB::table('usuarios')->insert([
+        DB::table('users')->insert([
             [
-                'id_usuario' => 1,
-                'nombre' => 'Elsa',
-                'correo' => null,
-                'password' => 'QWEqew123@',
+                'id' => 1,
+                'name' => 'Elsa',
+                'email' => null,
+                'password' => bcrypt('QWEqew123@'),
                 'telefono' => null,
                 'id_rol' => 1,
                 'created_at' => now(),

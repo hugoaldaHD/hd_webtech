@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use App\Models\Anuncios;
+use App\Models\Anuncio;
 use App\Models\Paquetes;
 use App\Models\DetallesPaquetes;
 
