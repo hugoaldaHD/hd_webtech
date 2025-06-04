@@ -3,9 +3,9 @@
 @section('title', 'Novedades')
 
 @section('content')
-    <div class="text-white text-center mb-4">
+    <div class="text-center mb-4">
         <h1>Bienvenido a la sección de Novedades</h1>
-        <p>Aquí encontrarás todas las novedades y noticias de Charcutería Elsa.</p>
+        <h6>Aquí encontrarás todas las novedades y noticias de Charcutería Elsa.</h6>
     </div>
     <br>
     <div class="container mt-5">

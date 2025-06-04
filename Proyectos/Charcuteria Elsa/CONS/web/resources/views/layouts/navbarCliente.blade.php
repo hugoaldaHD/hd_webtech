@@ -37,7 +37,7 @@
 </head>
 <body class="fondo">
     <div class="redes">
-        <h1>whatsapp - insta</h1>
+        <h1 class="marquee"><i class="fa-brands fa-whatsapp"></i> Whatsapp: 655 23 11 87ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ<i class="fa-brands fa-instagram"></i> Instagram: xarcuteriaelsa</h1>
     </div>
     <div class="body-wrapper">
 

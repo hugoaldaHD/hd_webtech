@@ -3,7 +3,7 @@
 @section('title', 'Productos')
 
 @section('content')
-    <div class="text-white text-center mb-5">
+    <div class="text-center mb-5">
         <h1>Bienvenido a la sección de Productos</h1>
     </div>
 
