@@ -36,7 +36,10 @@
         <!-- Fontawesome -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
-<body class="bg-dark">
+<body class="fondo">
+    <div class="redes">
+        <h1>whatsapp - insta</h1>
+    </div>
     <div class="body-wrapper">
 
         <!-- navbar -->
